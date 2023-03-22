@@ -220,33 +220,33 @@ button{
           scoreOfUser.value= ""
 
             if (userScores>=70 && userScores<=100){
-               showScore.innerHTML = "Excellent";
+               showScore.innerHTML = "Excellent &#128513;";
                showScore.style.color ="green"
                songExcellent.play();
 
             }else if (userScores>=60 &&  userScores< 70){
-               showScore.innerHTML = "VeryGood";
+               showScore.innerHTML = "VeryGood &#128515;	";
                showScore.style.color ="yellow";
                songVeryGood.play();
                
-            }else if (userScores>=50 && userScores<59){
-               showScore.innerHTML = "Average";
+            }else if (userScores>=50 && userScores<60){
+               showScore.innerHTML = "Average &#128578;";
                showScore.style.color ="blue";
                songAverage.play();
 
-            }else if (userScores>=45 && userScores< 49){
-               showScore.innerHTML = "Pass";
+            }else if (userScores>=45 && userScores< 50){
+               showScore.innerHTML = "Pass &#128566;";
                showScore.style.color ="Pink";
                songPass.play();
 
             }else if (userScores>=40 && userScores<45){
-               showScore.innerHTML = "Poor";
+               showScore.innerHTML = "Poor &#128548;";
                showScore.style.color ="Orange";
                songPoor.play();
               
 
             }else if (userScores>=0 && userScores<40){
-               showScore.innerHTML = "Fail";
+               showScore.innerHTML = "Fail &#128542;";
                showScore.style.color ="red";
                songFail.play();
             }else {
