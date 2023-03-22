@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<style>  
+.ddd{
+   box-shadow: 0 4px 8px 0 rgba(0.5, 0.5, 0.5, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   width: 450px; 
+   position: relative;
+   height: 400px;
+   background-color:rgba(0, 0, 255, 0.057);
+   /* background-color: rgb(245, 255, 240); */
+   margin-top: -45%;
+   margin-left: 12%;
+}
+p{
+   font-family: sans-serif;
+   font-size: 40px;
+   font-weight: bolder;
+   padding-left: 20px;
+   Padding-top: 30px;
+}
+input{
+         margin-left: 200px;
+         width: 230px;
+         height: 38px;
+         margin-left:90px ;
+         border-radius: 2px;
+         margin-top: -10px;
+         font-size: 16px;
+         border: none;
+         color: #555554;
+         
+         
+      }
+button{
+    margin-left: 130px;
+    cursor: pointer;
+    width: 150px;
+    height: 38px;
+    border-radius: 30px;
+    color: white;
+    background-color:  green;
+    font-size: 16px; 
+    border: 1px solid white;
+    margin-top: 32px;
+ }
+ button:hover{
+    background-color: #5555545a;
+    border: none;
+    color: azure;
+}
+#showScore{
+   font-family: sans-serif;
+   font-size: 30px;
+   font-weight: bolder;
+   padding-left: 60px;
+   Padding-top: 30px;
+}
+
+.marq {
+            color: beige;
+            padding-top:-50px;
+            
+        }
+
+@media(max-width :1280px){
+  .ddd{
+       margin-left: 8% ;
+       height: 450px;
+       width: 500px;
+       margin-top: -52%;
+  } 
+}
+@media(max-width:1024px){
+   .ddd{
+      margin-left:  9% ;
+       height: 450px;
+       width: 500px;
+       margin-top: -65%; 
+   }
+}
+@media(max-width:912px){
+   .imgg{
+      height: 2300px;
+   }
+   p{
+      font-size: 70px;
+   }
+   .marq{
+      font-size: 50px;
+   }
+   .ddd{
+      margin-left: 0% ;
+       height: 900px;
+       width: 700px;
+       margin-top: -1700px; 
+   }
+}
+@media(max-width:820px){
+   .imgg{
+      height: 2300px;
+   }
+   p{
+      font-size: 70px;
+   }
+   .marq{
+      font-size: 50px;
+   }.input{
+      width: 1000px;
+   }
+   .ddd{
+      margin-left: 40% ;
+       height: 1050px;
+       width: 800px;
+       margin-top: -1990px; 
+   }
+}
+@media(max-width:540px){
+   
+   .ddd{
+      margin-left: 70% ;
+       height: 1050px;
+       width: 800px;
+       margin-top: -350%; 
+   }
+}
+@media(max-width:412px){
+   
+   .ddd{
+      margin-left: 70% ;
+       height: 1050px;
+       width: 800px;
+       margin-top: -420%; 
+   }
+}
+@media(max-width:375px){
+   .imgg{
+      height: 1200px;
+   }
+   .ddd{
+      margin-left: 40% ;
+       height: 450px;
+       width: 00px;
+       margin-top: -190%; 
+       
+   }
+}
+@media(max-width:360px){
+   .imgg{
+      height: 1200px;
+   }
+   .ddd{
+      margin-left: 30% ;
+       height: 550px;
+       width: 700px;
+       margin-top: -290%; 
+   }
+}
+@media(max-width:280px){
+   .imgg{
+      height: 1200px;
+   }
+   .ddd{
+      margin-left: 30% ;
+       height: 550px;
+       width: 700px;
+       margin-top: -350%; 
+   }
+}
+@media(max-width:200px){
+   .imgg{
+      height: 1200px;
+   }
+   .ddd{
+      margin-left: 30% ;
+       height: 550px;
+       width: 700px;
+       margin-top: -200%; 
+   }
+}
+
+</style>
+
+<body>
+
+   <div class="back" style="width: 100%;">
+      <img class="imgg"  width="1500px" height="800px" src="./IMAGES/IMAGES/yellow.PNG" alt="">
+      
+   <div class="ddd" >
+         <p>GRADING SYSTEM</p>
+         <marquee class="marq"
+         behavior=alternate
+         direction="left" 
+         loop="" >
+         <h3>   You're close to victory don't give up now. </h3>
+</marquee><br><br>
+         <input type="text" placeholder="Enter your score" id="userScore">
+         <button onclick="checkScore()">CLICK HERE </button>
+         <div id="showScore"></div>
+      </div>
+      
+   </div>
+
+
+   <script>
+      function checkScore(){
+         var scoreOfUser = document.getElementById("userScore");
+         var userScores = scoreOfUser.value;
+         var songExcellent = new Audio("audio/k/applause.mp3");
+         var songVeryGood = new Audio("audio/k/whistle.mp3");
+         var songAverage = new Audio ("audio/k/itis.mp3");
+         var songPoor = new Audio("audio/k/yee-yee.mp3");
+         var songFail = new Audio ("audio/k/failure.mp3");
+         var songPass = new Audio ("audio/k/jesus.mp3");
+          scoreOfUser.value= ""
+
+            if (userScores>=70 && userScores<=100){
+               showScore.innerHTML = "Excellent";
+               showScore.style.color ="green"
+               songExcellent.play();
+
+            }else if (userScores>=60 &&  userScores< 70){
+               showScore.innerHTML = "VeryGood";
+               showScore.style.color ="yellow";
+               songVeryGood.play();
+               
+            }else if (userScores>=50 && userScores<59){
+               showScore.innerHTML = "Average";
+               showScore.style.color ="blue";
+               songAverage.play();
+
+            }else if (userScores>=45 && userScores< 49){
+               showScore.innerHTML = "Pass";
+               showScore.style.color ="Pink";
+               songPass.play();
+
+            }else if (userScores>=40 && userScores<45){
+               showScore.innerHTML = "Poor";
+               showScore.style.color ="Orange";
+               songPoor.play();
+              
+
+            }else if (userScores>=0 && userScores<40){
+               showScore.innerHTML = "Fail";
+               showScore.style.color ="red";
+               songFail.play();
+            }else {
+               showScore.innerHTML="Invalid Number"
+            }
+
+
+      }
+   </script>
+</body>
+</html>
